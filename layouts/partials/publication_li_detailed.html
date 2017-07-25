@@ -50,6 +50,7 @@
         {{ else }}
         {{ .Params.publication | markdownify }}
         {{ end }}
+        <span class="pub-year">({{ .Date.Year }})</span>
       </div>
 
       <div class="pub-links">

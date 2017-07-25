@@ -1,0 +1,23 @@
+.portrait {
+    transition: transform 0.5s;
+}
+
+.portrait:hover {
+    transform: scale(1.1);
+}
+
+.pub-authors {
+    line-height: normal;
+    font-style: normal;
+    font-size: 0.75rem;
+    color: #3170A5;
+}
+
+.pub-publication {
+    color: #090;
+    font-size: 0.75rem;
+}
+
+.pub-year {
+    color: #060;
+}
