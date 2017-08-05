@@ -23,6 +23,19 @@
       {{ .Content }}
     </div>
 
+    {{ $project := printf "%s/%s" .Section .File.TranslationBaseName }}
+    {{ $pub_len := len (where (where $.Site.Pages "Type" "publication") ".Params.url_project" "==" $project) }}
+    {{ if ge $pub_len 1 }}
+    <div class="article-style" itemprop="articleBody">
+      <h2>{{ (i18n "publications") }} </h2>
+      <ul class="fa-ul">
+      {{ range where (where $.Site.Pages "Type" "publication") ".Params.url_project" "==" $project }}
+      {{ partial "publication_li_simple" .}}
+      {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+
   </div>
 </article>
 
