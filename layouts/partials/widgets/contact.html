@@ -58,12 +58,6 @@
       </li>
       {{ end }}
 
-      {{ with $.Site.Params.address }}
-      <li>
-        <i class="fa-li fa fa-map-marker fa-2x" aria-hidden="true"></i>
-        <span id="person-address" itemprop="address">{{ . }}</span>
-      </li>
-      {{ end }}
 
       {{ with $.Site.Params.office_hours }}
       <li>
@@ -71,8 +65,24 @@
         <span>{{ . }}</span>
       </li>
       {{ end }}
-
-    </ul>
+      
+	  {{ with $.Site.Params.address }}
+      <li>
+        <i class="fa-li fa fa-map-marker fa-2x" aria-hidden="true"></i>
+        <span id="person-address" itemprop="address">{{ . }}</span>
+      </li>
+      {{ end }}
+	  
+	  {{ with $.Site.Params.map }}
+      <div class="mapouter">
+		  <div class="gmap_canvas">
+			  <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q={{ . }}&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+		  </div><a href="https://www.crocothemes.net">wordpress themes</a>
+		  <style>.mapouter{overflow:hidden;height:500px;width:600px;}.gmap_canvas {background:none!important;height:500px;width:600px;}</style>
+	  </div>
+	  {{ end }}
+    
+	</ul>
 
   </div>
 </div>
